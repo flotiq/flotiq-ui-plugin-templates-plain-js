@@ -179,20 +179,20 @@ if (watch) {
 
   console.log(
     `Serving at http://${host.replace(
-      '0.0.0.0',
+      '127.0.0.1',
       'localhost',
     )}:${port}/index.js and https://${host.replace(
-      '0.0.0.0',
+      '127.0.0.1',
       'localhost',
     )}:${3053}/index.js`,
   );
 
   console.log(
     `Manifest file is available at http://${host.replace(
-      '0.0.0.0',
+      '127.0.0.1',
       'localhost',
     )}:${port}/plugin-manifest.json and https://${host.replace(
-      '0.0.0.0',
+      '127.0.0.1',
       'localhost',
     )}:${3053}/plugin-manifest.json`,
   );
