@@ -39,3 +39,8 @@ If the user asks for another reusable example rather than a production plugin, k
 - Run `yarn build` after changes. It bundles `plugins/index.js` to `dist/index.js` and copies the manifest to `dist/plugin-manifest.json`.
 - Run `yarn start` for watch mode and the local HTTPS endpoint at `https://localhost:3053`.
 - Run `yarn format` only when formatting is needed; avoid unrelated formatting churn.
+
+## Release Hygiene
+
+- This project keeps a `CHANGELOG.md` (Keep a Changelog format, Semantic Versioning).
+- After making a change, bump `version` in both `package.json` and `plugin-manifest.json`, and add a corresponding entry to `CHANGELOG.md`. CI checks both files independently against `main`.
