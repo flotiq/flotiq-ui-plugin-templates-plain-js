@@ -37,8 +37,9 @@ If the user asks for another reusable example rather than a production plugin, k
 
 - Install dependencies with `yarn install`.
 - Run `yarn build` after changes. It bundles `plugins/index.js` to `dist/index.js` and copies the manifest to `dist/plugin-manifest.json`.
+- `yarn build` runs ESLint as an esbuild plugin, including its configuration (`.eslintrc.cjs`), and there is no separate `yarn lint` script — a lint failure only surfaces after the full build runs. Run `yarn format` scoped to just the files you edited (e.g. `npx prettier --write plugins/my-file.js`) before `yarn build` to catch style errors without a wasted full build cycle.
 - Run `yarn start` for watch mode and the local HTTPS endpoint at `https://localhost:3053`.
-- Run `yarn format` only when formatting is needed; avoid unrelated formatting churn.
+- Run `yarn format` only when formatting is needed; avoid unrelated formatting churn — prefer scoping it to changed files over the whole repo.
 
 ## Release Hygiene
 

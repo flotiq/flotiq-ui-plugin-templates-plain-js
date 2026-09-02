@@ -20,7 +20,7 @@ Relevant helpers:
 
 ## FormApi
 
-Event payloads expose a limited form API. Don't reach into undocumented internal form state.
+Form event payloads expose a limited form API as `data.form`. Don't reach into undocumented internal form state or use an undocumented `data.formApi` field.
 
 * Read: `getValue(name)`, `getValues()`, `getError(name)`, `getErrors()`, `getDirtyFields()`.
 * State: `dirty`, `isValid`, `isSubmitting`.

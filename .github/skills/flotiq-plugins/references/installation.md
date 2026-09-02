@@ -3,7 +3,7 @@
 ## Temporary installation (development)
 
 1. Serve the built plugin JavaScript over HTTPS (a template's local dev server, or any HTTPS-capable static host).
-2. Visit that URL directly first and confirm the response is JavaScript, not an HTML error page — accept any local development certificate the browser asks for.
+2. Visit that URL directly first and confirm the response is JavaScript, not an HTML error page — accept any local development certificate the browser asks for. Skipping this is the most common cause of `loadPlugin` failing with "Error occurred while connecting to the server, please try again later." — Flotiq's fetch to the local dev URL is silently blocked by the browser's untrusted self-signed certificate, and Flotiq reports that as this generic connection error. Fix: open the plugin URL (and the manifest URL, if used) directly in a browser tab and accept the certificate warning, then retry.
 3. In the authenticated Flotiq browser console, run:
 
    ```js

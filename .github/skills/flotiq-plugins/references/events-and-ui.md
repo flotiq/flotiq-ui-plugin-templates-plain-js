@@ -26,6 +26,8 @@ Call the payload's `reload()` after any action that changes grid data — nothin
 | `flotiq.form::after-submit` | Observing the API-submission result; skipped on client-side validation failure. |
 | `flotiq.form.relation::after-submit` | Observing edits to a related object made through the main form. |
 
+Form events expose their `FormApi` instance as `data.form`, not `data.formApi`. For example, a `flotiq.form.sidebar-panel::add` handler should read `data.form.getValues()` and call `data.form.setFieldValue(name, value)`.
+
 Use the payload's `formUniqueKey` in any cache key — multiple forms (e.g. version comparison) can be on screen at once. Respect `disabled`, `readonly`, `create`, and `duplicate` rather than offering an action that can't complete.
 
 ## Plugin and settings events
