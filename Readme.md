@@ -11,6 +11,15 @@
 3. update your `plugin-manifest.json` file to contain the production URL and other plugin information
 4. `yarn build` - to build plugins
 
+## AI agent guidance
+
+This template includes workspace instructions and skills for GitHub Copilot:
+
+- [Copilot instructions](.github/copilot-instructions.md) define the repository architecture, Flotiq API and credential rules, and the template-demo cleanup checklist.
+- [`flotiq-plugins`](.github/skills/flotiq-plugins/SKILL.md) guides agents through adding UI elements to CTD grids and forms, selecting Flotiq events, using `FormApi` and schema modals, configuring plugin settings, updating manifest permissions, integrating APIs, and installing/publishing the plugin.
+
+The skill can be discovered automatically from a matching request or invoked as `/flotiq-plugins`. Its focused references cover events and UI placement, manifest and API access, forms and settings, credential handling, and installation.
+
 ## Dev environment
 
 Dev environment is configured to use:
