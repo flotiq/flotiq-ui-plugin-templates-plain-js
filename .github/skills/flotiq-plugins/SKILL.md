@@ -1,11 +1,11 @@
 ---
 name: flotiq-plugins
-description: Use when building or extending a Flotiq UI plugin — choosing panel events, adding forms/settings, configuring manifest permissions and API access, or installing/publishing the plugin. Not for consuming Flotiq content in a frontend app (see flotiq-sdk) or rendering Flotiq page sections (see flotiq-ui-sections).
+description: Use when building or extending a Flotiq UI plugin — choosing panel events, adding forms/settings, configuring manifest permissions and API access, or installing/publishing the plugin.
 ---
 
 # Flotiq Plugins
 
-Build UI plugins that extend the Flotiq panel: grid/form additions, custom renderers, settings screens, and API-backed actions. Use only documented event names and payload contracts, request least-privilege permissions, and keep credentials out of the bundle. Not for building an app that consumes Flotiq content (`flotiq-sdk`) or rendering CMS page sections in a frontend (`flotiq-ui-sections`).
+Build UI plugins that extend the Flotiq panel: grid/form additions, custom renderers, settings screens, and API-backed actions. Use only documented event names and payload contracts, request least-privilege permissions, and keep credentials out of the bundle.
 
 ## When to use
 
@@ -31,6 +31,7 @@ Build UI plugins that extend the Flotiq panel: grid/form additions, custom rende
 * Read credentials (including any fallback Flotiq key) from plugin settings at runtime — never from source, `.env`, the manifest, or build-time constants that end up in the browser bundle.
 * Return the root element synchronously from `::render`/`::add`; do async work after, and update the already-returned element when it resolves.
 * Return `null` when a handler doesn't apply to the current content type, field, or view, so other plugins and the default UI can still render.
+* Cache stateful form UI by `formUniqueKey`, refresh its event payload on every cache hit, and resolve `data.form` from that current payload when an interaction occurs.
 
 ## Common mistakes
 
